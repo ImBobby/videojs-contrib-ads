@@ -151,7 +151,8 @@ const contribAdsPlugin = function(options) {
 
     // If an ad isn't playing, don't try to play an ad. This could result from prefixed
     // events when the player is blocked by a preroll check, but there is no preroll.
-    if (!player.ads.inAdBreak()) {
+    console.log('DEBUG', 'Videojs contrib ads');// eslint-disable-line
+    if (!player.ads.inAdBreak() || player.ads.isInAdMode()) {
       return;
     }
 
